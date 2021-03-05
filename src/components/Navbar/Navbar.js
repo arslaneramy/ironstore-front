@@ -8,7 +8,8 @@ class Navbar extends Component {
     return (
       <nav className="navbar">
         <Link to={"/"} id="home-btn">
-          <h4>Home</h4>
+          {/* insert logo */}
+          <h4><img src=""  />Home</h4>
         </Link>
         {this.props.isLoggedIn ? (
           <>

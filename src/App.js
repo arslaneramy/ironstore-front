@@ -6,13 +6,13 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
-import Private from './pages/Private/Private';
+import Profile from './pages/Profile/Profile';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
 import AnonRoute from './components/AnonRoute/AnonRoute';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-
+import Products from './components/Products/Products';
 
 class App extends Component {
   render() {
@@ -29,7 +29,7 @@ class App extends Component {
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
 
-          <PrivateRoute exact path="/private" component={Private} />
+          <PrivateRoute exact path="/profile" component={Profile} />
         </Switch>
       </div>
     );
