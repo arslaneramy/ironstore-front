@@ -3,11 +3,9 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .App {
   padding: 20px;
 }
-
 nav.navbar {
   flex-direction: row;
   justify-content: space-between;
@@ -15,25 +13,30 @@ nav.navbar {
   padding: 0px 20px;
   background: #686de0;
 }
-
-nav.navbar :hover{
-
-
+nav.navbar :hover {
 }
-
-
+.form {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+.form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form label {
+  margin: 1rem 0;
+}
 button.navbar-button {
   padding: 5px 20px;
   width: 100px;
   margin: 15px 10px;
   border-radius: 3px;
 }
-
 #home-btn {
   color: white;
   text-decoration: none;
 }
-
 /* For logo animation */
 /* @keyframes App-logo-spin {
   from {
