@@ -6,7 +6,7 @@ class Private extends Component {
     return (
       <div>
         <h1>Private Route</h1>
-        <h2>Welcome {this.props.user && this.props.user.username}</h2>
+        <h2>Welcome {this.props.user && this.props.user.firstName}</h2>
         {/* 
         <h2>Welcome {this.props.user ? this.props.user.username : null }</h2> 
         */}
