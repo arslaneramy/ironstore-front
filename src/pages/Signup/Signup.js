@@ -29,30 +29,37 @@ class Signup extends Component {
     const { email, password, firstName, lastName, shippingAddress } = this.state;
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h1 className="signup" >Sign Up</h1>
 
-        <form onSubmit={this.handleFormSubmit}>
+        <form className="form" onSubmit={this.handleFormSubmit}>
+          <div className="" >
+            <label>E-mail:</label>
+            <input type="text" name="email" placeholder="Enter E-mail" value={email} onChange={this.handleChange} />
 
-          <label>email:</label>
-          <input type="text" name="email" value={email} onChange={this.handleChange} />
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Enter Password" value={password} onChange={this.handleChange} />
 
-          <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+            <label>First Name:</label>
+            <input type="text" name="firstName" placeholder="Enter name" value={firstName} onChange={this.handleChange} />
 
-          <label>First Name:</label>
-          <input type="text" name="firstName" value={firstName} onChange={this.handleChange} />
+            <label>Last Name:</label>
+            <input type="text" name="lastName" placeholder="Enter Last Name" value={lastName} onChange={this.handleChange} />
 
-          <label>Last Name:</label>
-          <input type="text" name="lastName" value={lastName} onChange={this.handleChange} />
+            <label>shipping Address:</label>
+            <input type="text" name="shippingAddress" placeholder="Enter Address" value={shippingAddress} onChange={this.handleChange} />
 
-          <label>shipping Address:</label>
-          <input type="text" name="shippingAddress" value={shippingAddress} onChange={this.handleChange} />
+            <input type="submit" value="Signup" />
+            </div>
 
-          <input type="submit" value="Signup" />
+            <div>
+            
+          <br></br>
+            <p> Already have account? </p>
+            <Link to={"/login"}> Login </Link>
+          </div>
+
         </form>
         
-        <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
       </div>
     );
   }
