@@ -12,7 +12,6 @@ import Profile from './pages/Profile/Profile';
 import Navbar from './components/Navbar/Navbar';
 import AnonRoute from './components/AnonRoute/AnonRoute';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Products from './components/Products/Products';
 
 class App extends Component {
   render() {

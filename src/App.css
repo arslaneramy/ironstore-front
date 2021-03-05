@@ -3,11 +3,9 @@ body {
   margin: 0;
   padding: 0;
 }
-
 .App {
   padding: 20px;
 }
-
 nav.navbar {
   flex-direction: row;
   justify-content: space-between;
@@ -15,14 +13,35 @@ nav.navbar {
   padding: 0px 20px;
   background: #686de0;
 }
-
 nav.navbar :hover {
 }
-
 .form {
   max-width: 30rem;
   margin: 0 auto;
 }
+.imgContainer {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 75px 0;
+  border: 2px solid #eee;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 10px 0 #eee;
+  margin: 50px 5% 0 5%;
+  padding: 20px;
+  width: 40%;
+  font-size: 1.7em;
+  text-align: center;
+}
+
+ 
+
+.imgProduct {
+  width: 300px;
+  height: auto;
+  
+}
+
 .form > div {
   display: flex;
   flex-direction: column;
@@ -31,19 +50,16 @@ nav.navbar :hover {
 .form label {
   margin: 1rem 0;
 }
-
 button.navbar-button {
   padding: 5px 20px;
   width: 100px;
   margin: 15px 10px;
   border-radius: 3px;
 }
-
 #home-btn {
   color: white;
   text-decoration: none;
 }
-
 /* For logo animation */
 /* @keyframes App-logo-spin {
   from {
