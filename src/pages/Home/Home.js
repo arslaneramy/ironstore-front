@@ -22,7 +22,7 @@ const Home = () => {
   }, []); // array of dependencies, nothing there for now
 
   return (
-    <div>
+    <div className="">
       <h1>Most popular products</h1>
       {products.map((product) => (
         <Product product={product} />

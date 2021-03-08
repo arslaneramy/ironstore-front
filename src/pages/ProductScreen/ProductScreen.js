@@ -19,8 +19,6 @@ class ProductScreen extends React.Component  {
       componentDidMount(){
           this.bringProduct();
       }
-
-
       render() {
         const { product } = this.state;
         return (

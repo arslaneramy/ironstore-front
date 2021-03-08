@@ -14,10 +14,15 @@ nav.navbar {
   background: #686de0;
 }
 nav.navbar :hover {
+  
 }
 .form {
   max-width: 30rem;
   margin: 0 auto;
+}
+.logo{
+  width: 100px;
+  
 }
 .imgContainer {
   width: 1200px;
@@ -33,15 +38,10 @@ nav.navbar :hover {
   font-size: 1.7em;
   text-align: center;
 }
-
- 
-
 .imgProduct {
   width: 300px;
   height: auto;
-  
 }
-
 .form > div {
   display: flex;
   flex-direction: column;
@@ -60,6 +60,7 @@ button.navbar-button {
   color: white;
   text-decoration: none;
 }
+
 /* For logo animation */
 /* @keyframes App-logo-spin {
   from {
