@@ -17,8 +17,9 @@ class ProductScreen extends React.Component  {
         this.setState({ product: data});
     }
       componentDidMount(){
-          this.bringProduct();
+        this.bringProduct();
       }
+
       render() {
         const { product } = this.state;
         return (
@@ -31,7 +32,7 @@ class ProductScreen extends React.Component  {
                 </Link>
     
                 <Link>
-                <button>Add to cart</button>
+                    <button>Add to cart</button>
                 </Link>
                 
                 

@@ -24,8 +24,9 @@ class ProductService {
 
   getAll = () => {
       const pr = this.apiProducts.get("/"); // http://localhost:5000/api/products 
-
-      return pr
+      console.log(pr, "PPPPPRRRRRR");
+      
+      return pr;
   }
 
 }
