@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 // products on component level state, not on global state yet, maybe do it with redux ?
 
-class Home extends React.Component {
+class List extends React.Component {
   state = {
     products: [],
   };
@@ -17,7 +17,7 @@ class Home extends React.Component {
 
   loadProducts = () => {
     productService.getAll().then((response) => {
-      const products = response.data.splice(0, 2);
+      const products = response.data
       // console.log("PRODUCT!", products );
       this.setState({ products: products });
     });
@@ -66,4 +66,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default List;

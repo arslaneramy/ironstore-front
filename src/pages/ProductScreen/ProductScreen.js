@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
 import productService from './../../services/products-service';
 
 class ProductScreen extends React.Component  {
@@ -30,7 +29,7 @@ class ProductScreen extends React.Component  {
                     <button>Go Back</button>
                 </Link>
     
-                <Link to ="/api/users/cart">
+                <Link to ="/users/cart">
                 <button>Add to cart</button>
                 </Link>
                 
