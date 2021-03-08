@@ -13,12 +13,14 @@ nav.navbar {
   padding: 0px 20px;
   background: #686de0;
 }
-nav.navbar :hover {
-}
+
+/* nav.navbar :hover {} */
+
 .form {
   max-width: 30rem;
   margin: 0 auto;
 }
+
 .imgContainer {
   width: 1200px;
   margin: 0 auto;
@@ -34,7 +36,10 @@ nav.navbar :hover {
   text-align: center;
 }
 
- 
+.logo{
+  width: 100px;
+  height: auto;
+}
 
 .imgProduct {
   width: 300px;
@@ -61,11 +66,11 @@ button.navbar-button {
   text-decoration: none;
 }
 /* For logo animation */
-/* @keyframes App-logo-spin {
+ /* @keyframes logo {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-} */
+}  */

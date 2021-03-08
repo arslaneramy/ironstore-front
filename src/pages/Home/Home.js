@@ -16,12 +16,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="absolute-center border-darken-4">
       <h1>Most popular products</h1>
       {products.map((product) => (
-        <div className="imgContainer" >
+        <div className="imgContainer absolute-center">
           <h3>{product.name}</h3>
-          <img className="imgProduct" src={product.img} />
+          <img className="imgProduct" src={product.img} alt="imgProduct" />
           <h3>{product.description}</h3>
           <h3>{product.price}</h3>
           <h3>{product.reviews}</h3>
