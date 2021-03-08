@@ -1,32 +1,47 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
-import axios from "axios";
 
-const ProductScreen = ({ match }) => {
-    const [product, setProduct] = useState([])
+import productService from './../../services/products-service';
 
-    useEffect(() => {
-        const bringProduct = async () => {
-          const { data } = await axios.get(`/api/products/${match.params.id}`);
+class ProductScreen extends React.Component  {
+    state = {
+        product: {}
+    }
+
+
+     bringProduct = async () => {
+         const { match } = this.props;
+        const { data } = await productService.getOne(match.params.id);
+
+
+        this.setState({ product: data});
+    }
+      componentDidMount(){
+          this.bringProduct();
+      }
+
+
+      render() {
+        const { product } = this.state;
+        return (
+            <div>
     
-          setProduct(data);
-        };
+    <img className="imgProductScreen" src={product.img} alt={product.name} />
+             <br></br>
+                <Link to ="/">
+                    <button>Go Back</button>
+                </Link>
     
-        bringProduct();
-      }, []);
-
-
-    return (
-        <div>
-            <Link to ="/">
-                Go Back
-            </Link>
-            
-            <img className="imgProductScreen" src={product.img} alt={product.name} />
-
-
-        </div>
-    )
+                <Link>
+                <button>Add to cart</button>
+                </Link>
+                
+                
+    
+    
+            </div>
+        )
+      }
 }
 
 export default ProductScreen;

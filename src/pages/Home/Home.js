@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Product from "./../../components/Products/Product";
 import axios from "axios"; // http library
+import productService from './../../services/products-service';
 
 // products on component level state, not on global state yet, maybe do it with redux ?
 
@@ -10,9 +11,11 @@ const Home = () => {
   // make a request to our backend using useEffect
   useEffect(() => {
     const bringProducts = async () => {
-      const { data } = await axios.get("/api/products");
+      const { data } = await productService.getAll()
 
       setProducts(data);
+
+      // this.setState({ products: data.splice(0, 6)})
     };
 
     bringProducts();
