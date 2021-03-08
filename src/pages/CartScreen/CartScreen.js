@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
 import productService from './../../services/products-service';
 
-class ProductScreen extends React.Component  {
+class CartScreen extends React.Component  {
     state = {
         product: {}
     }
@@ -17,21 +16,20 @@ class ProductScreen extends React.Component  {
         this.setState({ product: data});
     }
       componentDidMount(){
-        this.bringProduct();
+          this.bringProduct();
       }
-
       render() {
         const { product } = this.state;
         return (
             <div>
     
-            <img className="imgProductScreen" src={product.img} alt={product.name} />
+    <img className="imgProductScreen" src={product.img} alt={product.name} />
              <br></br>
                 <Link to ="/">
                     <button>Go Back</button>
                 </Link>
     
-                <Link to ="/users/cart">
+                <Link>
                 <button>Add to cart</button>
                 </Link>
                 
@@ -40,7 +38,7 @@ class ProductScreen extends React.Component  {
     
             </div>
         )
-    }
+      }
 }
 
-export default ProductScreen;
+export default CartScreen;

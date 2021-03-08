@@ -17,7 +17,7 @@ class Home extends React.Component {
 
   loadProducts = () => {
     productService.getAll().then((response) => {
-      const products = response.data.splice(0,2)
+      const products = response.data.splice(0, 2);
       // console.log("PRODUCT!", products );
       this.setState({ products: products });
     });
@@ -27,7 +27,7 @@ class Home extends React.Component {
 
   render() {
     const { products } = this.state;
-    console.log("this.state.products",this.state.products); //{} --> _proto_: Object
+    console.log("this.state.products", this.state.products); //{} --> _proto_: Object
     return (
       <div className="">
         <div className="description">
