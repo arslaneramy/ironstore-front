@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-// import Product from "./../../components/Products/Product";
-import axios from "axios";
+import Product from "./../../components/Products/Product";
+import axios from "axios"; // http library
+
+// products on component level state, not on global state yet, maybe do it with redux ?
 
 const Home = () => {
   const [products, setProducts] = useState([]);
 
+  // make a request to our backend using useEffect
   useEffect(() => {
     const bringProducts = async () => {
       const { data } = await axios.get("/api/products");
@@ -13,20 +16,13 @@ const Home = () => {
     };
 
     bringProducts();
-  }, []);
+  }, []); // array of dependencies, nothing there for now
 
   return (
     <div>
       <h1>Most popular products</h1>
       {products.map((product) => (
-        <div className="imgContainer" >
-          <h3>{product.name}</h3>
-          <img className="imgProduct" src={product.img} />
-          <h3>{product.description}</h3>
-          <h3>{product.price}</h3>
-          <h3>{product.reviews}</h3>
-          <h3>{product.countInStock}</h3>
-        </div>
+        <Product product={product} />
       ))}
     </div>
   );
