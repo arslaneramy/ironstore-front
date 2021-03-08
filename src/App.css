@@ -13,14 +13,16 @@ nav.navbar {
   padding: 0px 20px;
   background: #686de0;
 }
-
-/* nav.navbar :hover {} */
-
+nav.navbar :hover {
+}
 .form {
   max-width: 30rem;
   margin: 0 auto;
 }
-
+.logo{
+  width: 100px;
+  
+}
 .imgContainer {
   width: 1200px;
   margin: 0 auto;
@@ -35,18 +37,10 @@ nav.navbar {
   font-size: 1.7em;
   text-align: center;
 }
-
-.logo{
-  width: 100px;
-  height: auto;
-}
-
 .imgProduct {
   width: 300px;
   height: auto;
-  
 }
-
 .form > div {
   display: flex;
   flex-direction: column;
@@ -65,12 +59,13 @@ button.navbar-button {
   color: white;
   text-decoration: none;
 }
+
 /* For logo animation */
- /* @keyframes logo {
+/* @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}  */
+} */

@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import Product from "././components/Products/Product"
+
 import { Switch, Route } from 'react-router-dom';
 
 // Pages
 import Home from './pages/Home/Home';
+import ProductScreen from './pages/ProductScreen/ProductScreen';
 import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
@@ -19,12 +22,9 @@ class App extends Component {
       <div className="container">
 
         <Navbar />
-
-
-
         <Switch>
           <Route exact path="/" component={Home} />
-
+          <Route path="/product/:id" component={ProductScreen} />
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
 
