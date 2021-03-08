@@ -17,7 +17,7 @@ class List extends React.Component {
 
   loadProducts = () => {
     productService.getAll().then((response) => {
-      const products = response.data
+      const products = response.data;
       // console.log("PRODUCT!", products );
       this.setState({ products: products });
     });
@@ -31,10 +31,7 @@ class List extends React.Component {
     return (
       <div className="">
         <div className="description">
-          <h2>
-            Hi! Welcome to Iron Store, here you can buy our merchandise from
-            ironHack{" "}
-          </h2>
+          <h2>Hi ! This is the product list </h2>
           <div className="rowArticle">
             <article>
               <img src="/img/shipping.png" width="150"></img>

@@ -23,9 +23,11 @@ nav.navbar :hover {
   width: 80px;
   height: auto;
 }
+
 .rowArticle {
   display: flex;
 }
+
 article {
   border: 2px white;
   margin: 0 auto;
@@ -34,6 +36,8 @@ article {
 }
 .description {
 }
+
+
 .imgContainer {
   width: 1200px;
   margin: 0 auto;
