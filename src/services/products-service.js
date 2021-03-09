@@ -8,7 +8,7 @@ class ProductService {
     // this.api  is a reusable axios request base containing the base url (baseURL)
     // of the API and the Headers options ( `withCredentials: true` )
     this.apiProducts = axios.create({
-      baseURL: "http://localhost:5000/api/products",
+        baseURL: process.env.REACT_APP_API_URL + "/api/products",
       withCredentials: true,
     });
   }
