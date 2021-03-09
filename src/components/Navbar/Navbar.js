@@ -18,7 +18,7 @@ class Navbar extends Component {
           <>
             <p>email: {this.props.user && this.props.user.email}</p>
             <button onClick={this.props.logout}>Logout</button>
-            <button>Cart</button>
+            <Link to="/users/cart"><button>Cart</button></Link>
           </>
         ) : (
           <>

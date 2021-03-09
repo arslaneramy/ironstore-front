@@ -1,44 +1,7 @@
-import React from 'react'
-import { Link } from "react-router-dom";
-import productService from './../../services/products-service';
+import React from 'react';
 
-class CartScreen extends React.Component  {
-    state = {
-        product: {}
-    }
-
-
-     bringProduct = async () => {
-         const { match } = this.props;
-        const { data } = await productService.getOne(match.params.id);
-
-
-        this.setState({ product: data});
-    }
-      componentDidMount(){
-          this.bringProduct();
-      }
-      render() {
-        const { product } = this.state;
-        return (
-            <div>
-    
-    <img className="imgProductScreen" src={product.img} alt={product.name} />
-             <br></br>
-                <Link to ="/">
-                    <button>Go Back</button>
-                </Link>
-    
-                <Link>
-                <button>Add to cart</button>
-                </Link>
-                
-                
-    
-    
-            </div>
-        )
-      }
+const CartScreen = () => {
+return <div>Cart</div>
 }
 
-export default CartScreen;
+export default CartScreen
