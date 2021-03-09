@@ -24,11 +24,15 @@ class ProductService {
 
   getAll = () => {
       const pr = this.apiProducts.get("/"); // http://localhost:5000/api/products 
-      console.log(pr, "PPPPPRRRRRR");
-      
-      return pr;
-  }
 
+      return pr
+  };
+
+  getList = () => {
+    const pr = this.apiProducts.get("/list"); // http://localhost:5000/api/products + /list
+
+    return pr
+};
 }
 
 // Create instance (object) containing all axios calls as methods

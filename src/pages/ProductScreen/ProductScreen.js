@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-
 import productService from './../../services/products-service';
 
 class ProductScreen extends React.Component  {
