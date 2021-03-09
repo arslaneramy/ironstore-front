@@ -9,12 +9,16 @@ class Navbar extends Component {
       <nav className="navbar">
         <Link to={"/"} id="home-btn">
           {/* insert logo */}
-          <h4><img src="/img/ironlogo.png" className="logo" />Home</h4>
+          <h4>
+            <img src="/img/ironlogo.png" className="logo" />
+            Home
+          </h4>
         </Link>
         {this.props.isLoggedIn ? (
           <>
             <p>email: {this.props.user && this.props.user.email}</p>
             <button onClick={this.props.logout}>Logout</button>
+            <button>Cart</button>
           </>
         ) : (
           <>
