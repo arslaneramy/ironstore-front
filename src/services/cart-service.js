@@ -8,7 +8,7 @@ class CartService {
     // this.api  is a reusable axios request base containing the base url (baseURL)
     // of the API and the Headers options ( `withCredentials: true` )
     this.apiCart = axios.create({
-        baseURL: process.env.REACT_APP_API_URL + "/api/users/cart",
+      baseURL: process.env.REACT_APP_API_URL + "/api/users/cart",
       withCredentials: true,
     });
   }

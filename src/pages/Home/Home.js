@@ -29,7 +29,7 @@ class Home extends React.Component {
     const { products } = this.state;
     console.log("this.state.products", this.state.products); //{} --> _proto_: Object
     return (
-      <div className="">
+      <div className="homeContainer">
         <div className="description">
           <h2>
             Hi! Welcome to Iron Store, here you can buy our merchandise from

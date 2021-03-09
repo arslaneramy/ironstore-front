@@ -33,9 +33,6 @@ class ProductScreen extends React.Component  {
                 <Link to ="/users/cart">
                 <button>Add to cart</button>
                 </Link>
-                
-                
-    
     
             </div>
         )

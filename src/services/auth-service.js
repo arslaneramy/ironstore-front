@@ -3,14 +3,20 @@ import axios from "axios";
 class AuthService {
   constructor() {
     this.auth = axios.create({
-      baseURL: process.env.REACT_APP_API_URL, 
+      baseURL: process.env.REACT_APP_API_URL + "/auth",
       withCredentials: true,
     });
   }
 
   signup(email, password, firstName, lastName, shippingAddress) {
     const pr = this.auth
-      .post("/auth/signup", { email, password, firstName, lastName, shippingAddress })
+      .post("/signup", {
+        email,
+        password,
+        firstName,
+        lastName,
+        shippingAddress,
+      })
       .then((response) => response.data);
     // .then(({ data }) => data); // Shorter way of `.then((response) => response.data);`
 
@@ -19,20 +25,20 @@ class AuthService {
 
   login(email, password) {
     const pr = this.auth
-      .post("/auth/login", { email, password })
+      .post("/login", { email, password })
       .then((response) => response.data);
 
     return pr;
   }
 
   logout() {
-    const pr = this.auth.get("/auth/logout").then((response) => response.data);
+    const pr = this.auth.get("/logout").then((response) => response.data);
 
     return pr;
   }
 
   me() {
-    const pr = this.auth.get("/auth/me").then((response) => response.data);
+    const pr = this.auth.get("/me").then((response) => response.data);
 
     return pr;
   }
