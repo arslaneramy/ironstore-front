@@ -7,20 +7,24 @@ class Navbar extends Component {
     return (
       <nav className="navbar">
         <Link to={"/"} id="home-btn">
-          {/* insert logo */}
           <h4>
             <img src="/img/ironlogo.png" className="logo" alt="logo" />
-            Home
           </h4>
         </Link>
         {this.props.isLoggedIn ? (
           <>
             <p>email: {this.props.user && this.props.user.email}</p>
-            <button onClick={this.props.logout}>Logout</button>
-              <button>Cart</button>
-            <Link to={"/profile"}>
-              <button>Profile</button>
+            <Link to={"/"} >
+              <button className="navbar-button" onClick={this.props.logout}>Logout</button>
             </Link>
+            <Link to={"/users/cart"} >
+              <button className="navbar-button" >Cart</button>
+            </Link>
+          
+            <Link to={"/profile"}>
+              <button className="navbar-button" >Profile</button>
+            </Link>
+
           </>
         ) : (
           <>
