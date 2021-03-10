@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProfileService from "../../services/profile-service";
+import profileService from "../../services/profile-service";
 import { withAuth } from "./../../context/auth-context";
 class EditProfile extends Component {
   state = {
@@ -19,22 +19,18 @@ class EditProfile extends Component {
       lastName,
       shippingAddress,
     } = this.state;
-    const { _id } = this.props.user;
-    ProfileService.editProfile(
-      email,
-      password,
-      firstName,
-      lastName,
-      shippingAddress,
-      _id
-    );
+
+    profileService
+      .editProfile(email, password, firstName, lastName, shippingAddress)
+      .then((data) => this.props.loadUser())
+      .catch((err) => console.log(err));
   };
 
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
-  
+
   render() {
     return (
       <div>
@@ -50,6 +46,14 @@ class EditProfile extends Component {
             type="text"
             name="firstName"
             value={this.state.firstName}
+            onChange={this.handleChange}
+          />
+          <label> last name: </label>
+          <input
+            placeholder="Enter new Las  Name"
+            type="text"
+            name="lastName"
+            value={this.state.lastName}
             onChange={this.handleChange}
           />
           <label>email:</label>
@@ -76,7 +80,6 @@ class EditProfile extends Component {
             value={this.state.shippingAddress}
             onChange={this.handleChange}
           />
-
           <input type="submit" value="Submit" />
         </form>
       </div>

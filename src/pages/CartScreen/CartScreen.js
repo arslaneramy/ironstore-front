@@ -1,44 +1,47 @@
-import React from 'react'
+
+import React from 'react';
 import { Link } from "react-router-dom";
+// import { withAuth } from './../../context/auth-context';
+import CartItem from "./../../components/Cart/Cart";
 import productService from './../../services/products-service';
+import cartService from './../../services/cart-service';
+import profileService from '../../services/profile-service';
 
-class CartScreen extends React.Component  {
+
+
+class Cart extends React.Component {
     state = {
-        product: {}
+        product : {},
+        qty : 0
     }
 
 
-     bringProduct = async () => {
-         const { match } = this.props;
-        const { data } = await productService.getOne(match.params.id);
+AddToCart = async () => {
+  
+    let { data } = await cartService.getCart();
 
-
-        this.setState({ product: data});
-    }
-      componentDidMount(){
-          this.bringProduct();
-      }
-      render() {
-        const { product } = this.state;
-        return (
-            <div>
-    
-    <img className="imgProductScreen" src={product.img} alt={product.name} />
-             <br></br>
-                <Link to ="/">
-                    <button>Go Back</button>
-                </Link>
-    
-                <Link>
-                <button>Add to cart</button>
-                </Link>
-                
-                
-    
-    
-            </div>
-        )
-      }
+    this.setState({ product: data});
 }
 
-export default CartScreen;
+
+componentDidMount(){
+    this.AddToCart();
+
+}
+  
+    render() {
+        const { product, qty } = this.state;
+   
+      return (
+        <div className="user-details">
+          <h2>Your cart :</h2>
+          <div>
+    
+         <h3></h3>
+        
+          
+          </div>
+          </div>
+      )}}
+
+export default Cart;

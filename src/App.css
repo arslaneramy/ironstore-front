@@ -11,13 +11,13 @@ nav.navbar {
   justify-content: space-between;
   display: flex;
   padding: 0px 20px;
-  background: #686de0;
+  background: #2e2e2e;
   margin: 0;
-  
+  color: #eee;
 }
 
 .navbar-button{
-  background-color: #008CBA;
+  background-color: #636363;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -27,6 +27,7 @@ nav.navbar {
 }
 
 nav.navbar :hover {
+  
 }
 .form {
   max-width: 30rem;

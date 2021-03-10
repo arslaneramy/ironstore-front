@@ -13,11 +13,20 @@ class CartService {
     });
   }
 
-  getCart = (id) => {
+  //get the cart
+  getCart = () => {
     const pr = this.apiCart.get('/');  // http://localhost:5000/api/users/cart 
 
     return pr;
   };
+
+  updateCart = () => {
+    const pr = this.apiCart.put('/')
+  };
+
+  deleteCart = (productId) => {
+    const pr = this.apiCart.get(`/${productId}`);
+  }
 
 }
 

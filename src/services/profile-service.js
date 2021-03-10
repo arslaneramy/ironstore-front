@@ -10,37 +10,27 @@ class ProfileService {
       withCredentials: true,
     });
   }
-  getOneUser = async (
-    firstName,
-    lastName,
-    password,
-    email,
-    shippingAddress,
-    id
-  ) => {
+  getOneUser = async () => {
     try {
-      let response = await this.profile.get(`/api/profile/${id}`, {
-        firstName,
-        lastName,
-        password,
-        email,
-        shippingAddress,
-      });
+      let response = await this.profile.get(`/api/users/edit`);
       return response.data;
     } catch (err) {
       console.log(err);
     }
   };
+
   editProfile = async (
-    firstName,
-    lastName,
     email,
     password,
-    shippingAddress
+    firstName,
+    lastName,
+    shippingAddress,
   ) => {
+    // async function by default returns a promise
+    // so it is not needed to return a promise explicitly
+    // like we do with then/catch promise syntax
     try {
-      console.log(firstName, lastName, email, password, shippingAddress);
-      let response = await this.profile.post('api/edit-profile', //put or post??
+      let response = await this.profile.put('/api/users', 
       {
         firstName,
         lastName,
@@ -53,6 +43,33 @@ class ProfileService {
       console.log(err);
     }
   };
+
+
+  editProfileP =  (
+    email,
+    password,
+    firstName,
+    lastName,
+    shippingAddress,
+  ) => {
+
+      const pr = this.profile.put('/api/users', 
+      {
+        firstName,
+        lastName,
+        email,
+        password,
+        shippingAddress,
+      })
+      .then((response) => response.data)
+      .catch((err)=> console.log(err));
+
+      return pr;
+
+  };
+
+
+
 }
 const profileService = new ProfileService();
 export default profileService;
