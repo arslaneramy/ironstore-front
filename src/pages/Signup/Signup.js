@@ -20,6 +20,7 @@ class Signup extends Component {
     } = this.state;
     this.props.signup(email, password, firstName, lastName, shippingAddress);
   };
+  
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
