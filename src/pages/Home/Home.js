@@ -37,12 +37,12 @@ class Home extends React.Component {
           </h2>
           <div className="rowArticle">
             <article>
-              <img src="/img/shipping.png" width="150"></img>
+              <img src="/img/shipping.png" width="150" alt="shippingImg" ></img>
               <h4>We deliver wherever you are</h4>
             </article>
             {/* <br/> */}
             <article>
-              <img src="/img/credit-card-icon.png" width="150"></img>
+              <img src="/img/credit-card-icon.png" width="150" alt="creditcardImg" ></img>
               <h4>pay with any credit card</h4>
             </article>
           </div>

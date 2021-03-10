@@ -1,13 +1,6 @@
-
-
-
 import React from "react";
 
-
-const CartItem = (props) => {
-  const { cartItem, cartKey } = props;
-  const { product, qty } = cartItem;
-
+const Cart = ({ product, qty }) => {
   return (
     <div className="cartItem">
       <div className="">
@@ -22,16 +15,12 @@ const CartItem = (props) => {
           {product.name} <span className="">€{product.price}</span>
         </b>
         <div>{product.description}</div>
-        <small>Amount: {qty}</small>
+        <div>{product.price} $</div>
+        <small>Amount: {qty} </small>
       </div>
-      <div
       
-        onClick={() => props.deleteCart(cartKey)}
-      >
-   
-      </div>
     </div>
   );
 };
 
-export default CartItem;
+export default Cart;
