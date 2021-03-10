@@ -1,47 +1,41 @@
-
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 // import { withAuth } from './../../context/auth-context';
-import CartItem from "./../../components/Cart/Cart";
-import productService from './../../services/products-service';
-import cartService from './../../services/cart-service';
-import profileService from '../../services/profile-service';
-
-
-
-class Cart extends React.Component {
-    state = {
-        product : {},
-        qty : 0
-    }
-
-
-AddToCart = async () => {
-  
-    let { data } = await cartService.getCart();
-
-    this.setState({ product: data});
+import Cart from "./../../components/Cart/Cart";
+import Product from "./../../components/Products/Product";
+import productService from "./../../services/products-service";
+import cartService from "./../../services/cart-service";
+class CartScreen extends React.Component {
+  state = {
+    cart: [],
+  };
+  //   addToCart = async () => {
+  //     let data = await cartService.getCart();
+  //     const cart = response.data
+  //     this.setState({ cart: data });
+  //   };
+  componentDidMount() {
+    this.addToCart();
+  }
+  addToCart = () => {
+    cartService.getCart().then((data) => {
+      const cart = data;
+      // console.log("dataaaaa", cart);
+      // console.log(data);
+      this.setState({ cart: cart });
+    });
+  };
+  render() {
+    const { cart } = this.state;
+    console.log("this.state.cart", this.state.cart);
+    return (
+      <div className="">
+        <h2> Your cart : </h2>
+        {cart.map((item) => (
+          <Cart key={item.product._id} product={item.product} qty={item.qty} />
+        ))}
+      </div>
+    );
+  }
 }
-
-
-componentDidMount(){
-    this.AddToCart();
-
-}
-  
-    render() {
-        const { product, qty } = this.state;
-   
-      return (
-        <div className="user-details">
-          <h2>Your cart :</h2>
-          <div>
-    
-         <h3></h3>
-        
-          
-          </div>
-          </div>
-      )}}
-
-export default Cart;
+export default CartScreen;

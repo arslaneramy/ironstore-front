@@ -14,18 +14,35 @@ class CartService {
   }
 
   //get the cart
-  getCart = () => {
-    const pr = this.apiCart.get('/');  // http://localhost:5000/api/users/cart 
-
-    return pr;
+  getCart = async () => {
+    try {
+      let response = await this.apiCart.get('/');  // http://localhost:5000/api/users/cart 
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  updateCart = () => {
-    const pr = this.apiCart.put('/')
+  // Add product by Id to the cart
+  updateCart = async (productId, qty) => {
+    try {
+      let response = await this.apiCart.put("/", { 
+     productId, qty
+    });
+      return response.data;
+      }
+        catch (err) {
+      console.log(err);
+    }
   };
 
-  deleteCart = (productId) => {
-    const pr = this.apiCart.get(`/${productId}`);
+  deleteCart = async (productId) => {
+    try {
+      let response = await this.apiCart.delete(`/${productId}`);
+      return response.data;
+    } catch (err) {
+      console.log(err);
+    }
   }
 
 }
