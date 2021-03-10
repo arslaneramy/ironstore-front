@@ -1,56 +1,47 @@
+
 import React from 'react';
 import { Link } from "react-router-dom";
-import withCartContext from "../../context/cart-context"
-
+// import { withAuth } from './../../context/auth-context';
 import CartItem from "./../../components/Cart/Cart";
+import productService from './../../services/products-service';
+import cartService from './../../services/cart-service';
+import profileService from '../../services/profile-service';
 
-const Cart = (props) => {
-    const { cart } = props.context;
-    console.log("props.context from Cart detail:>> ", props.context);
-    const cartKeys = Object.keys(cart || {});
-    console.log("cartKeys :>> ", cartKeys, cart);
-    return (
-      <div className="cartDiv">
-        <div className="">
-          <div className="">
-            <h4 className="title">My Cart</h4>
+
+
+class Cart extends React.Component {
+    state = {
+        product : {},
+        qty : 0
+    }
+
+
+AddToCart = async () => {
+  
+    let { data } = await cartService.getCart();
+
+    this.setState({ product: data});
+}
+
+
+componentDidMount(){
+    this.AddToCart();
+
+}
+  
+    render() {
+        const { product, qty } = this.state;
+   
+      return (
+        <div className="user-details">
+          <h2>Your cart :</h2>
+          <div>
+    
+         <h3></h3>
+        
+          
           </div>
-        </div>
-        <br />
-        <div className="container">
-          {cartKeys.length ? (
-            <div className="cartItemDiv">
-              {cartKeys.map((key) => (
-                <CartItem
-                  cartKey={key}
-                  key={key}
-                  cartItem={cart[key]}
-                  removeFromCart={props.context.removeFromCart}
-                />
-              ))}
-              <div className="">
-                <br />
-                <div className="">
-                  <button onClick={props.context.clearCart} className="">
-                    Clear cart
-                  </button>{" "}
-                  <button className="" onClick={props.context.checkout}>
-                    Checkout
-                  </button>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div className="noItemsCart">
-              <div className="">No item in cart!</div>
-              <div className="">
-                <Link to="/products/list">Go to products</Link>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  };
+          </div>
+      )}}
 
-export default withCartContext(Cart);
+export default Cart;

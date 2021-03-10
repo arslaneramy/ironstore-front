@@ -27,7 +27,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/product/:id" component={ProductScreen} />
-          <PrivateRoute path="/users/cart" component={CartScreen} />
+          <Route path="/users/cart" component={CartScreen} />
           <Route path="/products/list" component={ListScreen} />
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />

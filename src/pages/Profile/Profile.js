@@ -1,5 +1,3 @@
-
-
 import React, { Component } from "react";
 import { withAuth } from './../../context/auth-context';
 import { Link } from "react-router-dom";
@@ -16,13 +14,16 @@ class Profile extends Component {
     return (
       <div className="user-details">
         <h2>Welcome {this.props.user && this.props.user.firstName}</h2>
-        <div>
-          {/* <p>Username: {this.props.user.username}</p> 
-           <p>Email: {this.props.user.email}</p> */}
+        <div className="profileContainer" >
+          <p> Data Account: </p>
+          <p>Name: {this.props.user.firstName}</p> 
+          <p>Email: {this.props.user.email}</p>
+          <p>Address: {this.props.user.shippingAddress}</p> 
+          <br/>
+          <p>Do you want to edit your profile?</p>
           <button onClick={this.toggleEdit}>Edit</button>
           {this.state.showEdit ? <EditProfile /> : null}
         </div>
- 
       </div>
     );
   }

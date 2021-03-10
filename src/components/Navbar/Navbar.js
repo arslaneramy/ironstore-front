@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "./../../context/auth-context";
-
 class Navbar extends Component {
   render() {
     // const { user, logout, isLoggedin } = this.props;
@@ -10,7 +9,7 @@ class Navbar extends Component {
         <Link to={"/"} id="home-btn">
           {/* insert logo */}
           <h4>
-            <img src="/img/ironlogo.png" className="logo" />
+            <img src="/img/ironlogo.png" className="logo" alt="logo" />
             Home
           </h4>
         </Link>
@@ -18,7 +17,10 @@ class Navbar extends Component {
           <>
             <p>email: {this.props.user && this.props.user.email}</p>
             <button onClick={this.props.logout}>Logout</button>
-            <Link to="/users/cart"><button>Cart</button></Link>
+              <button>Cart</button>
+            <Link to={"/profile"}>
+              <button>Profile</button>
+            </Link>
           </>
         ) : (
           <>
@@ -35,5 +37,4 @@ class Navbar extends Component {
     );
   }
 }
-
 export default withAuth(Navbar);

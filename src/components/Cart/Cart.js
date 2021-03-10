@@ -1,11 +1,13 @@
+
+
+
 import React from "react";
+
 
 const CartItem = (props) => {
   const { cartItem, cartKey } = props;
-  console.log("cartItem from CartItem :>> ", cartItem);
-  console.log("cartKey from CartItem :>> ", cartKey);
-
   const { product, qty } = cartItem;
+
   return (
     <div className="cartItem">
       <div className="">
