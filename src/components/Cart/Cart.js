@@ -1,4 +1,6 @@
 import React from "react";
+import cartService from "../../services/cart-service";
+import productService from "../../services/products-service";
 
 
 const Cart = ({ product, qty }) => {
@@ -20,6 +22,7 @@ const Cart = ({ product, qty }) => {
         </b>
         <div>{product.description}</div>
         <small>Amount: {product.qty}</small>
+        <button onClick={()=> cartService.removeItem(product._id)} > Remove item </button>
       </div>
       <div>
    
