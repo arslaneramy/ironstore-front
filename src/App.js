@@ -10,11 +10,11 @@ import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
 import CartScreen from "./pages/CartScreen/CartScreen";
+import CheckoutScreen from './pages/CheckoutScreen/CheckoutScreen';
 // Components
 import Navbar from "./components/Navbar/Navbar";
 import AnonRoute from "./components/AnonRoute/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import Cart from "./components/Cart/Cart";
 
 class App extends Component {
   render() {
@@ -29,6 +29,7 @@ class App extends Component {
           <AnonRoute exact path="/login" component={Login} />
           <PrivateRoute exact path="/profile" component={Profile} />
           <PrivateRoute path="/users/cart" component={CartScreen} />
+          <PrivateRoute path="/checkout" component={CheckoutScreen} />
         </Switch>
       </div>
     );
