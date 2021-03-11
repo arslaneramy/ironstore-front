@@ -34,6 +34,8 @@ class CartScreen extends React.Component {
         {cart.map((item) => (
           <Cart key={item.product._id} product={item.product} qty={item.qty} />
         ))}
+
+     
       </div>
     );
   }
