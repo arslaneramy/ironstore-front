@@ -18,10 +18,9 @@ const Cart = ({ product, qty }) => {
       </div>
       <div className="">
         <b>
-          {product.name} <span className="">€{product.price}</span>
+          {product.name} <span className="">Amount : €{product.price}</span>
         </b>
-        <div>{product.description}</div>
-        <small>Amount: {product.qty}</small>
+       <b> <div>{product.description}</div></b>
         <button onClick={()=> cartService.removeItem(product._id)} > Remove item </button>
       </div>
       <div>
