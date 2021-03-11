@@ -13,7 +13,7 @@ class Navbar extends Component {
         </Link>
         {this.props.isLoggedIn ? (
           <>
-            <p>email: {this.props.user && this.props.user.email}</p>
+            <p>Hello {this.props.user && this.props.user.firstName}</p>
             <Link to={"/"} >
               <button className="navbar-button" onClick={this.props.logout}>Logout</button>
             </Link>
