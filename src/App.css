@@ -32,6 +32,16 @@ nav.navbar {
   font-size: 16px;
 }
 
+.home-button{
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  background-color: lightskyblue;
+  color: white;
+  display: flex;
+align-items: center;
+}
+
 nav.navbar :hover {
   
 }
@@ -48,13 +58,22 @@ nav.navbar :hover {
   display: flex;
 }
 
+.welcomeMessage {
+  text-align: center;
+}
+
 article {
   border: 2px white;
   margin: 0 auto;
   box-sizing: border-box;
   box-shadow: 2px 2px 10px 0 rgba(181, 236, 215, 0.849);
 }
-.description {
+.welcomeMessage2 {
+  text-align: center;
+}
+
+.popularProducts {
+  text-align: center;
 }
 
 
