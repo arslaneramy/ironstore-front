@@ -62,9 +62,12 @@ class Home extends React.Component {
         </div>
 
         <h1>Most popular products</h1>
-        {products.map((product) => (
+        <div className="productContainer" >
+          {products.map((product) => (
           <Product key={product._id} product={product} />
-        ))}
+          ))}
+        </div>
+
       </div>
     );
   }

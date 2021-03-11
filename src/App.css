@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
 
-*{
-  font-family: 'Roboto Mono', monospace;
+* {
+  font-family: "Roboto Mono", monospace;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
 }
 nav.navbar {
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   display: flex;
   padding: 0px 20px;
   background: #2e2e2e;
@@ -21,7 +21,7 @@ nav.navbar {
   color: #eee;
 }
 
-.navbar-button{
+.navbar-button {
   justify-content: right;
   background-color: #636363;
   color: white;
@@ -32,9 +32,6 @@ nav.navbar {
   font-size: 16px;
 }
 
-nav.navbar :hover {
-  
-}
 .form {
   max-width: 30rem;
   margin: 0 auto;
@@ -49,19 +46,6 @@ nav.navbar :hover {
 }
 
 article {
-  border: 2px white;
-  margin: 0 auto;
-  box-sizing: border-box;
-  box-shadow: 2px 2px 10px 0 rgba(181, 236, 215, 0.849);
-}
-.description {
-}
-
-
-.imgContainer {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 75px 0;
   border: 2px solid #eee;
   border-radius: 20px;
   box-sizing: border-box;
@@ -72,10 +56,40 @@ article {
   font-size: 1.7em;
   text-align: center;
 }
+
+.productContainer {
+  display: flex;
+  margin: 10px;
+  /* padding: 10px; */
+  font-size: 10px;
+}
+
+.imgContainer {
+  /* width: 00px; */
+  margin: 0;
+  padding: 75px 0;
+  border: 2px solid #eee;
+  border-radius: 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 10px 0 #eee;
+  margin: 50px 5% 0 5%;
+  padding: 10px;
+  width: 40%;
+  font-size: 1.7em;
+  text-align: center;
+  image-rendering: 300dpi;
+}
+
 .imgProduct {
   width: 300px;
-  height: auto;
+  height: 300px;
 }
+
+.description{
+  text-align: center;
+  justify-content: center;
+}
+
 .form > div {
   display: flex;
   flex-direction: column;

@@ -13,9 +13,9 @@ class Navbar extends Component {
         </Link>
         {this.props.isLoggedIn ? (
           <>
-            <p>Hello {this.props.user && this.props.user.firstName}</p>
+            <p className="pName" >Hello {this.props.user && this.props.user.firstName}</p>
             <Link to={"/"} >
-              <button className="navbar-button" onClick={this.props.logout}>Logout</button>
+              <button className="navbar-button" onClick={this.props.logout} >Logout</button>
             </Link>
             <Link to={"/users/cart"} >
               <button className="navbar-button" >Cart</button>

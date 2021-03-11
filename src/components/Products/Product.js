@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Product =  ({ product }) => {
     return(
-        <div>
-        <div className="imgContainer" >
+      <div className="imgContainer" >
+        <div  >
           <h3>{product.name}</h3>
           <Link to={`/product/${product._id}`}>
             <img className="imgProduct" src={product.img} />
@@ -15,7 +15,7 @@ const Product =  ({ product }) => {
        
         </div>
 
-        </div>
+      </div>
     )
 }
 

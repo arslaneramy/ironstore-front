@@ -1,6 +1,5 @@
 import axios from "axios";
-// THIS IS AN EXAMPLE THAT YOU CAN USE
-// TO CREATE A SERVICE FOR YOUR AXIOS CALLS
+
 class ProfileService {
   constructor() {
     // this.api  is a reusable axios request base containing the base url (baseURL)

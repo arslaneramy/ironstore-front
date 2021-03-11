@@ -54,7 +54,7 @@ class List extends React.Component {
           </Link>
         </div>
 
-        <h1>Most popular products</h1>
+        
         {products.map((product) => (
           <Product key={product._id} product={product} />
         ))}
