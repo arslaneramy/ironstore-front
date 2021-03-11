@@ -12,7 +12,6 @@ const Product =  ({ product }) => {
           <h3>{product.description}</h3>
           <h3>{product.price} $</h3>
           {/* <h3>{product.reviews}</h3> */}
-       
         </div>
 
       </div>

@@ -49,9 +49,7 @@ class List extends React.Component {
           <h4> Or do you just want your cell phone to look amazing? </h4>
           <h4> find that and much more here! </h4>
           {/* we dont have yet the list products */}
-          <Link to={`/products/list`}>
-            <button> All Products </button>
-          </Link>
+          
         </div>
 
         

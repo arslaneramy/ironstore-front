@@ -23,8 +23,6 @@ class CartScreen extends React.Component {
   addToCart = () => {
     cartService.getCart().then((data) => {
       const cart = data;
-      // console.log("dataaaaa", cart);
-      // console.log(data);
       this.setState({ cart: cart });
     });
   };
@@ -47,23 +45,27 @@ class CartScreen extends React.Component {
     console.log("this.state.cart", this.state.cart);
     const cartIsEmpty = cart.length === 0;
     return (
-      <div className="">
+      <div className="popularProducts" >
         <h2> Your cart {cartIsEmpty ? "is empty" : ":"} </h2>
 
         {!cartIsEmpty && (
           <Link to="/checkout">
-            <button>Checkout</button>
+            <button className="home-button" >Checkout</button>
           </Link>
         )}
+        <div className="cartScreen" >
 
-        {cart.map((item) => (
-          <CartItem
-            key={item.product._id}
-            product={item.product}
-            qty={item.qty}
-            removeFromCart={this.removeFromCart}
-          />
-        ))}
+          {cart.map((item) => (
+            <CartItem
+              key={item.product._id}
+              product={item.product}
+              qty={item.qty}
+              removeFromCart={this.removeFromCart}
+            />
+          ))}
+        </div>
+
+     
       </div>
     );
   }

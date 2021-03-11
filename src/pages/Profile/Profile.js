@@ -52,7 +52,7 @@ class Profile extends Component {
           <p>Address: {this.state.shippingAddress}</p>
           <br />
           <p>Do you want to edit your profile?</p>
-          <button onClick={this.toggleEdit}>Edit</button>
+          <button className="home-button" onClick={this.toggleEdit}>Edit</button>
 
           {this.state.showEdit ? <EditProfile loadUser={this.loadUser} /> : null}
         </div>

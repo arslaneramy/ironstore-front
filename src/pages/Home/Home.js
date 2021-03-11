@@ -31,7 +31,7 @@ class Home extends React.Component {
     return (
       <div className="homeContainer">
         <div className="description">
-          <h2>
+          <h2 className="welcomeMessage">
             Hi! Welcome to Iron Store, here you can buy our merchandise from
             ironHack{" "}
           </h2>
@@ -52,16 +52,18 @@ class Home extends React.Component {
           </div>
 
           <br />
-          <h4> Do you need a cup to take your coffee in the morning? </h4>
+          <div className="welcomeMessage2">
+          <h4> Do you, Ironhacker, need a cup to take your coffee in the morning? </h4>
           <h4> Or do you just want your cell phone to look amazing? </h4>
-          <h4> find that and much more here! </h4>
+          <h4> Find that and much more here! </h4>
+          </div>
           {/* we dont have yet the list products */}
           <Link to={`/products/list`}>
-            <button> All Products </button>
+            <button className="home-button">All Products</button>
           </Link>
         </div>
 
-        <h1>Most popular products</h1>
+        <h1 className="popularProducts" >Most popular products</h1>
         <div className="productContainer" >
           {products.map((product) => (
           <Product key={product._id} product={product} />

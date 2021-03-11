@@ -33,7 +33,7 @@ class EditProfile extends Component {
 
   render() {
     return (
-      <div>
+      <div className="user-details" >
         <form
           className="form"
           onSubmit={this.handleFormSubmit}
@@ -80,7 +80,8 @@ class EditProfile extends Component {
             value={this.state.shippingAddress}
             onChange={this.handleChange}
           />
-          <input type="submit" value="Submit" />
+          <br/>
+          <input className="home-button" type="submit" value="Submit" />
         </form>
       </div>
     );

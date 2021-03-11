@@ -30,17 +30,19 @@ class ProductScreen extends React.Component  {
         console.log("PRODUCT!",product);
         
         return (
-            <div>
-    
-            <img className="imgProductScreen" src={product.img} alt={product.name} />
-             <br></br>
-                <Link to ="/">
-                    <button>Go Back</button>
-                </Link>
-    
+            <div className="oneProduct" >
+
+              <h3>{product.name}</h3>
+              <h3>{product.price} $</h3>
+
+              <img className="imgProductScreen" src={product.img} alt={product.name} />
+              <br></br>
+              <Link to ="/">
+                <button className="home-button" >Go Back</button>
+              </Link>
                 
-                <button onClick={()=> this.addProduct()} >Add to cart</button>
-                
+              <button className="home-button" onClick={()=> this.addProduct()} >Add to cart</button>
+              
     
             </div>
         )
