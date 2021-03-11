@@ -3,7 +3,7 @@ import cartService from "../../services/cart-service";
 import productService from "../../services/products-service";
 
 
-const Cart = ({ product, qty }) => {
+const CartItem = ({ product, qty, removeFromCart }) => {
 
     console.log('product', product)
 
@@ -20,8 +20,9 @@ const Cart = ({ product, qty }) => {
         <b>
           {product.name} <span className="">Amount : €{product.price}</span>
         </b>
-       <b> <div>{product.description}</div></b>
-        <button onClick={()=> cartService.removeItem(product._id)} > Remove item </button>
+        <div>{product.description}</div>
+        <small>Amount: {product.qty}</small>
+        <button onClick={()=> removeFromCart(product._id) } > Remove item </button>
       </div>
       <div>
    
@@ -30,4 +31,4 @@ const Cart = ({ product, qty }) => {
   );
 };
 
-export default Cart;
+export default CartItem;
