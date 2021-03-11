@@ -1,6 +1,7 @@
 import axios from "axios";
 // THIS IS AN EXAMPLE THAT YOU CAN USE
 // TO CREATE A SERVICE FOR YOUR AXIOS CALLS
+
 class CartService {
   constructor() {
     // this.api  is a reusable axios request base containing the base url (baseURL)
@@ -9,6 +10,7 @@ class CartService {
       baseURL: process.env.REACT_APP_API_URL + "/api/users/cart",
       withCredentials: true,
     });
+    
   }
   //get the cart
   getCart = async () => {
@@ -23,7 +25,7 @@ class CartService {
   updateCart = async (productId, qty) => {
     try {
       let response = await this.apiCart.put("/", { 
-     productId, qty
+      productId, qty
     });
       return response.data;
       }
@@ -31,7 +33,7 @@ class CartService {
       console.log(err);
     }
   };
-  deleteCart = async (productId) => {
+  removeItem = async (productId) => {
     try {
       let response = await this.apiCart.delete(`/${productId}`);
       return response.data;

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import productService from './../../services/products-service';
+import cartService from './../../services/cart-service';
+
 
 class ProductScreen extends React.Component  {
     state = {
@@ -9,7 +11,7 @@ class ProductScreen extends React.Component  {
 
 
      bringProduct = async () => {
-         const { match } = this.props;
+        const { match } = this.props;
         const { data } = await productService.getOne(match.params.id);
 
 
@@ -19,8 +21,14 @@ class ProductScreen extends React.Component  {
         this.bringProduct();
       }
 
+      addProduct(){
+        cartService.updateCart(this.state.product._id, 1);
+      }
+
       render() {
         const { product } = this.state;
+        console.log("PRODUCT!",product);
+        
         return (
             <div>
     
@@ -30,9 +38,9 @@ class ProductScreen extends React.Component  {
                     <button>Go Back</button>
                 </Link>
     
-                <Link to ="/users/cart">
-                <button>Add to cart</button>
-                </Link>
+                
+                <button onClick={()=> this.addProduct()} >Add to cart</button>
+                
     
             </div>
         )

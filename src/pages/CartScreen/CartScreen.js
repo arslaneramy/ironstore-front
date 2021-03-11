@@ -5,6 +5,7 @@ import Cart from "./../../components/Cart/Cart";
 import Product from "./../../components/Products/Product";
 import productService from "./../../services/products-service";
 import cartService from "./../../services/cart-service";
+
 class CartScreen extends React.Component {
   state = {
     cart: [],
@@ -14,9 +15,11 @@ class CartScreen extends React.Component {
   //     const cart = response.data
   //     this.setState({ cart: data });
   //   };
+
   componentDidMount() {
     this.addToCart();
   }
+
   addToCart = () => {
     cartService.getCart().then((data) => {
       const cart = data;
@@ -25,6 +28,7 @@ class CartScreen extends React.Component {
       this.setState({ cart: cart });
     });
   };
+
   render() {
     const { cart } = this.state;
     console.log("this.state.cart", this.state.cart);
@@ -32,7 +36,9 @@ class CartScreen extends React.Component {
       <div className="">
         <h2> Your cart : </h2>
         {cart.map((item) => (
-          <Cart key={item.product._id} product={item.product} qty={item.qty} />
+          <Cart key={item.product._id} product={item.product} qty={item.qty}
+            
+           />
         ))}
 
      
