@@ -20,6 +20,10 @@ class CartScreen extends React.Component {
     this.addToCart();
   }
 
+  totalCart = () =>{
+
+  }
+  
   addToCart = () => {
     cartService.getCart().then((data) => {
       const cart = data;

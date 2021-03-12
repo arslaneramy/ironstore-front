@@ -1,10 +1,22 @@
 import React, { Component } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
+import Profile from "./../Profile/Profile";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 class CheckoutScreen extends Component {
+  state = {
+    showAddress:true,
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+    shippingAddress: "",
+  };
+
+
+  
   initStripePayment = async () => {
     console.log('CLICKED MAKE A PAYMENT')
     const stripe = await stripePromise;
@@ -31,13 +43,19 @@ class CheckoutScreen extends Component {
       // using `result.error.message`.
     }
   };
+  
+
 
   render() {
     return (
-      <div>
-        <h1>Checkout Screen</h1>
+      <div className="cartScreen" >
+        <h1>Thanks for your order </h1>
+        <p> Your products will arrive at: </p>
+        
 
-        <button onClick={this.initStripePayment}> Make a payment</button>
+        <button onClick={this.initStripePayment}> Make a payment </button>
+
+
       </div>
     );
   }

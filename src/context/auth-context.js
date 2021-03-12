@@ -3,7 +3,6 @@ import authService from '../services/auth-service';
 
 const { Consumer, Provider } = React.createContext();
 
-
 class AuthProvider extends React.Component {
   state = {
     isLoggedIn: false,

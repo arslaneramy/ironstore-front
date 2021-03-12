@@ -33,14 +33,14 @@ class EditProfile extends Component {
 
   render() {
     return (
-      <div className="user-details" >
+      <div className="signup" >
         <form
           className="form"
           onSubmit={this.handleFormSubmit}
           method="POST"
           encType="multipart/form-data"
         >
-          <label> first name: </label>
+          <label> First Name: </label>
           <input
             placeholder="Enter new Name"
             type="text"
@@ -48,7 +48,8 @@ class EditProfile extends Component {
             value={this.state.firstName}
             onChange={this.handleChange}
           />
-          <label> last name: </label>
+          <br/>
+          <label> Last Name: </label>
           <input
             placeholder="Enter new Las  Name"
             type="text"
@@ -56,7 +57,8 @@ class EditProfile extends Component {
             value={this.state.lastName}
             onChange={this.handleChange}
           />
-          <label>email:</label>
+          <br/>
+          <label>Email:</label>
           <input
             placeholder="Enter new E-mail"
             type="text"
@@ -64,7 +66,8 @@ class EditProfile extends Component {
             value={this.state.email}
             onChange={this.handleChange}
           />
-          <label>password:</label>
+          <br/>
+          <label>Password:</label>
           <input
             placeholder="Enter new password"
             type="password"
@@ -72,7 +75,8 @@ class EditProfile extends Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
-          <label> shipping Address: </label>
+          <br/>
+          <label> Shipping Address: </label>
           <input
             placeholder="Enter new Address"
             type="text"

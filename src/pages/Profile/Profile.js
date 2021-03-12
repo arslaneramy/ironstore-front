@@ -46,7 +46,7 @@ class Profile extends Component {
       <div className="user-details">
         <h2>Welcome {this.state.firstName}</h2>
         <div className="profileContainer">
-          <p> Data Account: </p>
+          <p> Profile Account: </p>
           <p>Name: {this.state.firstName}</p>
           <p>Email: {this.state.email}</p>
           <p>Address: {this.state.shippingAddress}</p>
@@ -60,4 +60,5 @@ class Profile extends Component {
     );
   }
 }
+
 export default withAuth(Profile);

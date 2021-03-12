@@ -27,7 +27,7 @@ class ProductScreen extends React.Component  {
 
       render() {
         const { product } = this.state;
-        console.log("PRODUCT!",product);
+        // console.log("PRODUCT!",product);
         
         return (
             <div className="oneProduct" >
@@ -36,8 +36,9 @@ class ProductScreen extends React.Component  {
               <h3>{product.price} $</h3>
 
               <img className="imgProductScreen" src={product.img} alt={product.name} />
+              <h6>Description: {product.description} </h6>
               <br></br>
-              <Link to ="/">
+              <Link to ="/products/list">
                 <button className="home-button" >Go Back</button>
               </Link>
                 
